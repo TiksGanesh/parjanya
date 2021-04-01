@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Parjanya</string>
+    <string name="title_home">Today\'s Weather</string>
+    <string name="title_dashboard">Forecast</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="no_internet_connection">Please check internet connection</string>
+    <string name="error_fetch_data">Error to fetch weather data</string>
+    <string name="permission_request_text">Parjanya application require, location permission while using application.\nLocation permission will be used for getting weather data for user location.\nPlease grant location permission to use application.</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="error_permission">Location Permission Issue</string>
+</resources>
