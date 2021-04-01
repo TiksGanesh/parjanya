@@ -20,10 +20,11 @@ import com.example.parjanya.R
 import com.example.parjanya.model.WeatherRequest
 import com.example.parjanya.network.RequestService
 import com.google.android.gms.location.*
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class DashboardFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
+    private val dashboardViewModel: DashboardViewModel  by viewModel()
     private val mFusedLocationClient: FusedLocationProviderClient by lazy {
         LocationServices.getFusedLocationProviderClient(requireContext())
     }
@@ -41,10 +42,7 @@ class DashboardFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
 
-        dashboardViewModel =
-                ViewModelProvider(this, DashboardViewModelFactory(DashboardUseCase(
-                    DashboardRepository(RequestService(requireContext()))
-                ))).get(DashboardViewModel::class.java)
+
         val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
         textView = root.findViewById(R.id.text_dashboard)
         dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
